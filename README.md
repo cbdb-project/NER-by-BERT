@@ -14,6 +14,8 @@ Version of Tensorflow: 1.15.2
 
 Version of Kashgari: 1.1.5
 
+Platform: Google Colab (codes are based on Google Colab)
+
 
 在CBDB项目中，研究人员对命名实体识别（NER)具有强烈的兴趣。我们希望可以通过设计程序从古代人物的传记资料中自动挖掘出诸如年号，地名，官职这样的实词。在本仓库中，我们使用BERT模型在金朝人物传记中执行NER任务。
 
@@ -28,3 +30,5 @@ Version of Kashgari: 1.1.5
 Tensorflow版本：1.15.2
 
 Kashgari版本：1.1.5
+
+平台： Google Colab（代码均在Google Colab上运行）
