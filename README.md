@@ -2,33 +2,29 @@
 
 Named Entity Recognition(NER) on biographical data is of researchers' interest in the CBDB project. It is vital that we could develop a program to automatically recognize the desired entities in the texts(for instance, date time, reign name, etc). In this repository, a BERT model is trained to perform the NER mission on biographics in dynasty Jin. 
 
-To begin with, we train the model with labeled data acquired from Ming dynasty. Then, the model is run on Jin data to perform the NER task. The result shows that the model does well in recognizing reigns and place names while performs relatively poorly on the task of title recognition. 
 
-However, hyperparameters will be adjusted in the future to enhance the performance of the model. More data and codes will be pulled on this repostitory.
+## Model Description
 
-Some Details of the model:
+To enhance the accuracy and effectiveness of the model, BERT is adopted to perform the task. BERT is a NLP framework published by Google in 2008, aiming at training an embedding model using bidirectional transformers. Although BERT was only capable of processing English texts at first, a Chinese version has later been published by researchers. The model (in tensorflow, pytorch) could be found in: https://github.com/ymcui/Chinese-BERT-wwm
 
-Pretrained Model: 'chinese_wwm_ex_L-12_H-768_A-12', Could be found in: https://github.com/ymcui/Chinese-BERT-wwm
+In our practice, we adopt a slight model, with 12 layers, 768 hidden nodes and 12 heads. The model is specified as 'chinese_wwm_ex_L-12_H-768_A-12'.
 
-Version of Tensorflow: 1.15.2
+## Model Detail
 
-Version of Kashgari: 1.1.5
+The goal of our task is to predict labels in Jin Dynasty using data from Ming Dynasty. Hence, we will first train our model on Jin data, with reigns and office titles coming from Ming replaced by reigns and office titles coming from Jin respectively. After training, we deploy the model onto Jin data, tag the entities and hand them to experts for further supervision.
 
-Platform: Google Colab (codes are based on Google Colab)
+## Implementation Detail
 
+There are a few points I would like emphasize on concerning with the implementation detail:
 
-在CBDB项目中，研究人员对命名实体识别（NER)具有强烈的兴趣。我们希望可以通过设计程序从古代人物的传记资料中自动挖掘出诸如年号，地名，官职这样的实词。在本仓库中，我们使用BERT模型在金朝人物传记中执行NER任务。
+1. The train-and-predict code was stored in .ipynb files. As for .py files, those are python scripts that transform tagged .txt files into xml file matching the format requirement of Markus. (An online assessment system)
+2. The code was written in a rather... non-mainstream manner. To be specific, the model was written based on package Paddlehub, an deep learning framework developed by BAIDU. The Paddlehub code is deployed on AIStudio platform (https://aistudio.baidu.com). The reason for choosing AIStudio and Paddlehub is that powerful GPUs are accessible on AIStudio. Colab GPUs provided by Google are rather slow on BERT training.
+3. Unfortunately, AIStudio does not support Tensorflow and Pytorch, which is extremely annoying. So basically Paddlehub is a trade-off between convenience and high-performance computing resource.
+4. For potential researchers, I suggest 3 ways to deal with this problem: 1. Use Paddlehub and AIStudio as the working platform. However, the English version of AIStudio might not be that user-friendly to non-Chinese-speaking researchers. 2. If you have high-performance computing resource (such as a cluster), I suggest you pip install Paddlehub on the cluster. 3. It is also suggested that you can refactor the model using Tensorflow/Pytorch. However, this might be a bit time consuming.
 
-在最开始，我们使用明朝的已标记数据对模型进行训练。接下来，这一模型被用于金朝的传记数据上执行NER任务。结果表明，我们训练的模型在地名与年号上具有优良的标记能力，但是在对官名的识别能力上相对较弱。
+## Additional Notice
 
-然而，在将来，我们将继续调整模型的超参数以增强模型的表现能力。更多的关于模型的数据与代码将被上传至这一仓库中。
+Well, the readme.md has not finished yet. Since most of the codes are my own working codes, the model may still be hard to deploy because many of the codes are without comment. Hence, I will:
 
-一些模型的细节：
-
-预训练模型：'chinese_wwm_ex_L-12_H-768_A-12'，这一模型可以在以下网址中被找到：https://github.com/ymcui/Chinese-BERT-wwm
-
-Tensorflow版本：1.15.2
-
-Kashgari版本：1.1.5
-
-平台： Google Colab（代码均在Google Colab上运行）
+1. Write the comments as soon as possible.
+2. Give a comprehensive introduction on how to deploy the model.
