@@ -22,6 +22,34 @@ There are a few points I would like emphasize on concerning with the implementat
 3. Unfortunately, AIStudio does not support Tensorflow and Pytorch, which is extremely annoying. So basically Paddlehub is a trade-off between convenience and high-performance computing resource.
 4. For potential researchers, I suggest 3 ways to deal with this problem: 1. Use Paddlehub and AIStudio as the working platform. However, the English version of AIStudio might not be that user-friendly to non-Chinese-speaking researchers. 2. If you have high-performance computing resource (such as a cluster), I suggest you pip install Paddlehub on the cluster. 3. It is also suggested that you can refactor the model using Tensorflow/Pytorch. However, this might be a bit time consuming.
 
+## A Practical Guide to Training and Deployment
+
+### Get Accessed to AIStudio
+
+As we have mentioned before, our model is deployed via Paddlehub supported by AIStudio developed by BAIDU, where much high-performance computing resource is avaliable. **If your model is not deployed via AIStudio, you can skip this subsection**.
+
+#### Language Setting and Log in
+
+First, you shall visit https://aistudio.baidu.com, which is the official website of AIStudio. At the top-right corner of the website, researchers could switch the language to English by clicking the EN icon. Then you could sign up and log in via your Github account.
+
+#### Obtain Free Computing Resource
+
+After you've signed up for AIStudio, you can then finish the questionnaire on https://aistudio.baidu.com/aistudio/questionnaire?activityid=457 to obtain the right to use high-performance GPUs for 12 hours. Technically you may skip the annoying parts collecting your personal information (telephone, address, etc). They won't verify your personal information so you could simply fill in fake ones (to avoid junk mail/call).
+
+After you've signed up, every time when you log in AIStudio, you will obtain a 10-hour right to use high-performance GPUs, which is quite enough for our project.
+
+#### Start a New Project!
+
+Now you can start a new project. Click your avatar icon at the top-right corner, enter 'personal center' - 'projects' - 'my project' - blue 'create' icon in the right- 'Notebook'. Then you've created a new Jupyter Notebook for your new project, and everything follows the rule of a Jupyter Notebook.
+
+### NER Using Paddlehub on AIStudio
+
+To be continued.
+
+
+
+
+
 ## Additional Notice
 
 Well, the readme.md has not finished yet. Since most of the codes are my own working codes, the model may still be hard to deploy because many of the codes are without comment. Hence, I will:
