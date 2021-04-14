@@ -2,6 +2,15 @@
 
 Named Entity Recognition(NER) on biographical data is of researchers' interest in the CBDB project. It is vital that we could develop a program to automatically recognize the desired entities in the texts(for instance, date time, reign name, etc). In this repository, a BERT model is trained to perform the NER mission on biographics in dynasty Jin. 
 
+## File Description
+
+In this section, I will briefly describe what each files is used for in this repository.
+
+The Data file contain all data we are interested in. Unpacking the **result** data, we will acquire the training data from Ming. **Jin_data** provide samples of Jin biographies that are of our interest. **BERT_Samples** file contain tagged samples performed by BERT.
+
+The Code file contain our training code (saved as JinNER.ipynb Notebook). For code in PythonScripts, we can find Python modules that convert .txt tagged results to xml files that are readable by Markus.
+
+As for Paddlehub_Guide file, You could find an uncompleted Paddlehub tutorial written in Chinese. However, an English version of Paddlehub Tutorial could be found in this readme.md, so researchers could just ignore this file.
 
 ## Model Description
 
