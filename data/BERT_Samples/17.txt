@@ -1,0 +1,11 @@
+ char tag
+0 澤 B-place-placename
+1 州 I-place-placename
+2 人 O
+3 ， O
+4 明 B-date-reign
+5 昌 I-date-reign
+6 中 O
+7 進 O
+8 士 O
+9 。 O
